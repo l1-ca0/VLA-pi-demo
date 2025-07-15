@@ -1,0 +1,79 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "aloha_static_coffee",
+  "dataset_size": 12210000,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lerobot/aloha_static_coffee@92a18984a637ec4abd50956b2b0e1f16ab499308/data/chunk-000/file-000.parquet": {
+      "num_bytes": 3328560,
+      "checksum": null
+    }
+  },
+  "download_size": 3328560,
+  "features": {
+    "observation.state": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "observation.effort": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "action": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "_type": "Value"
+    },
+    "next.done": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "index": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "task_index": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 15538560,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 12210000,
+      "num_examples": 55000,
+      "dataset_name": "aloha_static_coffee"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

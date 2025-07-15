@@ -1,0 +1,45 @@
+# OpenPI Demo Requirements
+# This file lists the core dependencies for the OpenPI demo.
+# Follow the installation guide in docs/getting_started.md for complete setup.
+
+# Essential dependencies used by demo scripts
+numpy>=1.21.0
+
+# Image/video processing (used by examples and scripts)
+opencv-python>=4.8.0
+
+# Data handling (used by training and evaluation scripts)
+datasets>=2.14.0
+h5py>=3.7.0
+
+# Additional dependencies used by scripts
+pathlib2>=2.3.0; python_version<"3.4"  # pathlib for older Python versions (Path used in scripts)
+
+# Machine Learning dependencies (used by train.py)
+# Note: JAX is included with OpenPI installation, but we specify minimum versions for compatibility
+jax>=0.4.0  # Used in train.py for training implementation
+optax>=0.1.0  # Used in train.py for optimizers
+
+# Note: The following packages are installed separately per installation guide:
+# - OpenPI: Clone and install from source (includes JAX, PyTorch, and other ML dependencies)
+# - lerobot: Install specific commit with compatibility layer  
+# - ROS 2: Only required for actual ALOHA hardware
+
+# Optional: For advanced users who want to explore the full OpenPI training pipeline
+# torch>=2.0.0        # Included with OpenPI installation
+# torchvision>=0.15.0  # Included with OpenPI installation
+# tqdm>=4.64.0         # Included with OpenPI installation
+# Pillow>=9.0.0        # Included with OpenPI installation
+# huggingface_hub>=0.16.0  # Included with OpenPI installation
+
+# The demo scripts in this repository use:
+# - numpy (for array operations)
+# - opencv-python (for image processing in examples)
+# - datasets (for loading HuggingFace datasets)
+# - h5py (for data file handling)
+# - jax/optax (for training implementation)
+#
+# Heavy ML dependencies (PyTorch, Transformers, etc.) are provided by the OpenPI installation.
+
+# Standard library modules used but don't need installation:
+# - argparse, json, time, logging, sys, dataclasses, enum, typing, pathlib, random 

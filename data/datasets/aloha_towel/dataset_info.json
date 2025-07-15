@@ -1,0 +1,84 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "aloha_sim_insertion_human",
+  "dataset_size": 4006262,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/lerobot/aloha_sim_insertion_human@c5dfb3a6c77a91e4c0b22910d9e9cc6e2f526c4b/data/chunk-000/file-000.parquet": {
+      "num_bytes": 855778,
+      "checksum": null
+    },
+    "hf://datasets/lerobot/aloha_sim_insertion_human@c5dfb3a6c77a91e4c0b22910d9e9cc6e2f526c4b/data/chunk-000/file-001.parquet": {
+      "num_bytes": 847617,
+      "checksum": null
+    },
+    "hf://datasets/lerobot/aloha_sim_insertion_human@c5dfb3a6c77a91e4c0b22910d9e9cc6e2f526c4b/data/chunk-000/file-002.parquet": {
+      "num_bytes": 855579,
+      "checksum": null
+    },
+    "hf://datasets/lerobot/aloha_sim_insertion_human@c5dfb3a6c77a91e4c0b22910d9e9cc6e2f526c4b/data/chunk-000/file-003.parquet": {
+      "num_bytes": 293268,
+      "checksum": null
+    }
+  },
+  "download_size": 2852242,
+  "features": {
+    "observation.state": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "action": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "episode_index": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "frame_index": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "timestamp": {
+      "dtype": "float32",
+      "_type": "Value"
+    },
+    "next.done": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "index": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "task_index": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 6858504,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 4006262,
+      "num_examples": 25000,
+      "dataset_name": "aloha_sim_insertion_human"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
