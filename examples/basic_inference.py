@@ -22,6 +22,7 @@ import cv2
 import time
 import json
 from typing import Dict, Any
+from pathlib import Path
 
 # OpenPI imports 
 from openpi.training import config as _config
@@ -170,6 +171,17 @@ def create_synthetic_observation() -> Dict[str, Any]:
     }
 
 
+def convert_paths(obj):
+    if isinstance(obj, dict):
+        return {k: convert_paths(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_paths(i) for i in obj]
+    elif isinstance(obj, Path):
+        return str(obj)
+    else:
+        return obj
+
+
 def main():
     parser = argparse.ArgumentParser(description="OpenPI ALOHA Basic Inference")
     parser.add_argument("--model", type=str, default="pi0_aloha_towel",
@@ -312,7 +324,7 @@ def main():
             save_data = {
                 "model_name": args.model,
                 "prompt": args.prompt,
-                "checkpoint_path": inference.checkpoint_path,
+                "checkpoint_path": str(inference.checkpoint_path) if inference.checkpoint_path is not None else None,
                 "model_info": {
                     "model_type": str(inference.config.model.model_type),
                     "action_dim": inference.config.model.action_dim,
@@ -346,6 +358,9 @@ def main():
             # Add timestamp
             save_data["timestamp"] = time.strftime("%Y-%m-%d %H:%M:%S")
             
+            # Convert all Path objects to strings
+            save_data = convert_paths(save_data)
+
             try:
                 with open(args.output_file, 'w') as f:
                     json.dump(save_data, f, indent=2)
